@@ -13,7 +13,7 @@ function App() {
     navigate('/store',{searchKey: searchKey});
    }
   return (
-    <div ClassNames="app">
+    <div class="app">
       <Header parentGetValue={getSearchValue} setValue={searchValue}></Header>
       <Routes>
         <Route exact path="/" element={<Store searchKey={searchValue}/>} />

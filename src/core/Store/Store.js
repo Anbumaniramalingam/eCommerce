@@ -5,15 +5,13 @@ import DiscountOffer from '../DiscountOffer/DiscountOffer';
 import Card from '../Card/Card';
 import Footer from '../Footer/Footer';
 import PaginationCom from '../PaginationCom/PaginationCom';
-import { useLocation } from "react-router-dom";
 
-function Store() {
-  const location = useLocation();
+function Store(props) {
   const [data, setData] = useState([]);
   const [allData, setAllData] = useState({});
   const [catageryList, setCatageryList] = useState([]);
   const [selectCatagery, setSelectCatagery] = useState('all');
-  const [searchValue, setSearchValue] = useState(location.searchKey || "");
+  const [searchValue, setSearchValue] = useState(props.searchKey || "");
   const [paginationCount, setPaginationCount] = useState(0);
   const cardCount = window.innerWidth > 550 ? 10 : 4;
   
@@ -56,8 +54,8 @@ function Store() {
     }
    },[selectCatagery]);
    useEffect(()=>{
-    if (searchValue !== ''){
-      fetch(`https://dummyjson.com/products/search?q=${searchValue}`)
+    if (props.searchKey !== ''){
+      fetch(`https://dummyjson.com/products/search?q=${props.searchKey}`)
         .then((response) => response.json())
         .then((resData) => {;
           setData(resData.products?.slice(0, cardCount));
@@ -70,17 +68,12 @@ function Store() {
       setData(allData.products?.slice(0, cardCount));
       paginationCountLogic(allData.products?.length);
     }
-   },[ searchValue]);
+   },[ props.searchKey]);
 
    const handleChange = (e) =>{
     setSelectCatagery(e.target.value);
     setSearchValue('');
    }
-
-   /*const getSearchValue = (searchKey) => {
-    setSearchValue(searchKey.target.value);
-    setSelectCatagery('all');
-   }*/
    const paginationCountLogic = (count) => {
     count && setPaginationCount(Math.ceil(count / cardCount));
    }
