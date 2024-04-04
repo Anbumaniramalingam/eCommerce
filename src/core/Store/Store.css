@@ -1,0 +1,18 @@
+.store {
+    padding-bottom: 10px;
+}
+.card-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter{
+    display: flex;
+    padding: 20px 0px;
+    justify-content: flex-end;
+}
+
+.filter select {
+    padding: 10px 15px;
+}
+  

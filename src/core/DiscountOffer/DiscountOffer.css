@@ -1,0 +1,12 @@
+.disount-offer {
+    border: 1px solid #333;
+    background: linear-gradient(to right, #cf2728, #050a3f);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.disount-offer h2{
+    margin-top: 0;
+}
+.disount-offer p{
+    color: #fff;
+}

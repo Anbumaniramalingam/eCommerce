@@ -1,0 +1,7 @@
+.footer{
+    display: flex;
+}
+.footerlinks_2 a{
+    text-decoration: none;
+    color: #333;
+}

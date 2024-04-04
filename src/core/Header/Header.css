@@ -1,0 +1,39 @@
+.header {
+    text-align: center;
+
+}
+.header ul {
+    list-style: none;
+    display: flex;
+}
+.header li {
+    padding: 0px 10px;
+}
+.App-header {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    height: 90px;
+}
+.input-search {
+    padding: 10px;
+    width: 250px;
+}   
+.logo {
+    display: flex;
+    width: 150px;
+    font-style: oblique;
+    font-weight: 900;
+    font-size: xxx-large;
+    color: cadetblue;
+    justify-content: center;
+}
+.logo img {
+    width: 150px;
+}
+@media screen and (max-width: 600px) {
+    .nav-list {
+        display: none;
+    }
+    
+}
