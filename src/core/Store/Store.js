@@ -15,7 +15,6 @@ function Store(props) {
   const [paginationCount, setPaginationCount] = useState(0);
   const cardCount = window.innerWidth > 550 ? 10 : 4;
   
-  
    useEffect(() => {
     
     fetch('https://dummyjson.com/products')

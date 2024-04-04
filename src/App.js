@@ -12,6 +12,7 @@ function App() {
     setSearchValue(searchKey.target.value);
     navigate('/store',{searchKey: searchKey});
    }
+   
   return (
     <div class="app">
       <Header parentGetValue={getSearchValue} setValue={searchValue}></Header>
